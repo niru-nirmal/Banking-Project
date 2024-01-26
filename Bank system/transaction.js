@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function getAccountNumber() {
   const loggedInUsername = localStorage.getItem('loggedInUsername');
+  
 
   if (loggedInUsername) {
       const userData = JSON.parse(localStorage.getItem(loggedInUsername));
-
+    
       if (userData && userData.accountnumber) {
+        
           document.getElementById('accountNumber').textContent = userData.accountnumber;
       }
   }

@@ -3,12 +3,14 @@ function login() {
   var enteredPassword = document.getElementById("password").value;
 
   var userData = localStorage.getItem(enteredUsername);
-
+  
   if (userData) {
     var storedData = JSON.parse(userData);
+    
 
     if (enteredPassword === storedData.password) {
       localStorage.setItem('loggedInUsername', enteredUsername)
+      
       loginSuccessModal()
       
     } else {
