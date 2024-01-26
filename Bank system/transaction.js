@@ -8,17 +8,23 @@ document.addEventListener('DOMContentLoaded', function () {
   getAccountNumber(); 
 });
 
-function getAccountNumber() {
+document.addEventListener('DOMContentLoaded', function () {
+  getAccountDetails(); 
+});
+
+function getAccountDetails() {
   const loggedInUsername = localStorage.getItem('loggedInUsername');
-  
 
   if (loggedInUsername) {
-      const userData = JSON.parse(localStorage.getItem(loggedInUsername));
-    
-      if (userData && userData.accountnumber) {
-        
-          document.getElementById('accountNumber').textContent = userData.accountnumber;
+    const userData = JSON.parse(localStorage.getItem(loggedInUsername));
+
+    if (userData && userData.accountnumber) {
+      document.getElementById('accountNumber').textContent = userData.accountnumber;
+
+      if (userData.firstname) {
+        document.getElementById('firstname').textContent = 'Welcome ' + userData.firstname;
       }
+    }
   }
 }
 
