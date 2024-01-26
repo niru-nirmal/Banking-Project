@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="transaction.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img width="100" src="SBI-Logo.png" alt="Logo">
+        </div>
+        <div class="menu-nav">
+            <a href="home.html">Home</a>
+            <a href="registration.html">Application Registration</a>
+            <div class="dropdown">
+                <button class="dropbtn">Banking <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Personal Banking</a>
+                    <a href="login.html">Corporate Banking</a>
+                </div>
+            </div>
+            <a href="faq.html">FAQ</a>
+            <a href="contactus.html">Customer Care</a>
+            <a href="about.html">About Us</a> 
+        </div>
+    </div>
+    <div class="bank-container">
+        <h2>Transaction Details</h2>
+        
+        <h3>Balance: <span id="balance">1000</span> Rs</h3>
+        <h4>Account Number: <span id="accountNumber"></span></h4>
+    
+        <label for="withdrawAmount" class="label-style">Withdraw Amount:</label>
+
+
+        <input type="number" id="withdrawAmount" class="transaction-input" placeholder="Enter amount" required>
+    
+        <button onclick="withdraw()">Withdraw</button>
+    
+        <label for="depositAmount" class="label-style">Deposit Amount:</label>
+        <input type="number" id="depositAmount" class="transaction-input" placeholder="Enter amount" required>
+    
+        <button onclick="deposit()">Deposit</button>
+    
+      </div>
+      <script src="transaction.js"></script>
+      <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+      </footer>
+</body>
+</html>

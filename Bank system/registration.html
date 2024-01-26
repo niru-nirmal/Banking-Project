@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="navbar">
+    <div class="logo">
+        <img width="100" src="SBI-Logo.png" alt="Logo">
+    </div>
+    <div class="menu-nav">
+        <a href="home.html">Home</a>
+        <a href="registration.html">Application Registration</a>
+        <div class="dropdown">
+            <button class="dropbtn">Banking <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="login.html">Personal Banking</a>
+                <a href="login.html">Corporate Banking</a>
+            </div>
+        </div>
+        <a href="faq.html">FAQ</a>
+        <a href="contactus.html">Customer Care</a>
+        <a href="about.html">About Us</a> 
+    </div>
+</div>
+<body>
+ 
+  <div class="registration-container">
+    <h2>Registration</h2>
+    <form id="registrationForm">
+        <input type="text" id="fname" placeholder="First Name" required>
+        <input type="text" id="lname" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="number" id="acc_num" placeholder="Account Number" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+<div style="display: flex; margin-top: 5px;">
+        <label style="display: flex; justify-content: center; align-items: center;">Gender:</label>
+        <label style="display: flex; justify-content: center; align-items: center;">
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label style="display: flex; justify-content: center; align-items: center;">
+            <input type="radio" name="gender" value="female"> Female
+        </label>
+        <label style="display: flex; justify-content: center; align-items: center;">
+            <input type="radio" name="gender" value="other"> Other
+        </label>
+      </div>
+        <button type="button" onclick="register()">Register</button>
+    </form>
+</div>
+
+    <div id="registrationSuccessModal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeRegistrationSuccessModal()">&times;</span>
+          <p>Registration successful. You can now login.</p>
+      </div>
+  </div>
+      <script src="registration.js"></script>
+      <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+      </footer>
+</body>
+</html>
