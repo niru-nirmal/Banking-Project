@@ -56,3 +56,8 @@ function closeRegistrationSuccessModal() {
   registrationSuccessModal.style.display = 'none';
   window.location.href = 'login.html';
 }
+
+document.getElementById('logo').addEventListener('click', function() {
+    
+  window.location.href = 'home.html';
+});

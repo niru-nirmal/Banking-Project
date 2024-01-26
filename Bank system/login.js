@@ -59,3 +59,8 @@ function forgotPassword() {
     alert("Username not found");
   }
 }
+
+document.getElementById('logo').addEventListener('click', function() {
+    
+  window.location.href = 'home.html';
+});

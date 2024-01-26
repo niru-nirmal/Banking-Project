@@ -77,3 +77,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.logo{
+  cursor: grab;
+}
