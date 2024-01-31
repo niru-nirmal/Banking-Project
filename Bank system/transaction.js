@@ -11,6 +11,7 @@ function getAccountDetails() {
 
     if (userData && userData.accountnumber) {
       document.getElementById('accountNumber').textContent = userData.accountnumber;
+      
 
       if (userData.firstname) {
         document.getElementById('firstname').textContent = 'Welcome ' + userData.firstname;
@@ -122,6 +123,7 @@ function transfer() {
   balanceData[transferToUsername] = newBalanceRecipient;
 
   localStorage.setItem('balanceData', JSON.stringify(balanceData));
+  updateBalance(newBalanceSender);
 
   transferAmountInput.value = '';
   transferToUsernameInput.value = '';
@@ -142,3 +144,4 @@ function populateUsernamesDropdown() {
     }
   }
 }
+

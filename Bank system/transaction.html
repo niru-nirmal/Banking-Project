@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body onload="loadPage()">
     <div class="navbar">
         <div class="logo" id="logo">
             <img width="100" src="SBI-Logo.png" alt="Logo">
@@ -40,7 +40,7 @@
         <h2>Transaction Details</h2>
         <h3 style="color: black;" id="firstname"></h3>
         <h4>Account Number: <span id="accountNumber"></span></h4>
-        <h3>Balance: <span id="balance">1000</span> Rs</h3>
+        <h3>Balance: <span id="balance"></span> Rs</h3>
         
         <label for="withdrawAmount" class="label-style">Withdraw Amount:</label>
 
@@ -54,7 +54,8 @@
         <button onclick="deposit()">Deposit</button>
 
         <label for="transferToUsername" class="label-style">Transfer To Username:</label>
-        <select id="transferToUsername" class="transaction-input" required>
+        <select  id="transferToUsername" class="transaction-input" required>
+            <option value="Select User">Select User</option> 
         </select>
 
         <label for="transferAmount" class="label-style">Transfer Amount:</label>
