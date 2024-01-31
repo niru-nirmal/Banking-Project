@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Banking Site</title>
     <link rel="stylesheet" href="transaction.css">
     <link rel="stylesheet" href="home.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -16,12 +16,19 @@
         </div>
         <div class="menu-nav">
             <a href="home.html">Home</a>
-            <a href="registration.html">Application Registration</a>
+            <!-- <a href="registration.html">Application Registration</a> -->
+            <div class="dropdown">
+                <button class="dropbtn">Application Registration <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="registration.html">Personal Registration</a>
+                    <a href="corporate-reg.html">Corporate Registration</a>
+                </div>
+            </div>
             <div class="dropdown">
                 <button class="dropbtn">Banking <i class="fa fa-caret-down"></i></button>
                 <div class="dropdown-content">
-                    <a href="login.html">Personal Banking</a>
-                    <a href="login.html">Corporate Banking</a>
+                    <a href="personal-login.html">Personal Banking</a>
+                <a href="corporate-login.html">Corporate Banking</a>
                 </div>
             </div>
             <a href="faq.html">FAQ</a>
@@ -32,13 +39,10 @@
     <div class="bank-container">
         <h2>Transaction Details</h2>
         <h3 style="color: black;" id="firstname"></h3>
-        
-        <h3>Balance: <span id="balance">1000</span> Rs</h3>
         <h4>Account Number: <span id="accountNumber"></span></h4>
+        <h3>Balance: <span id="balance">1000</span> Rs</h3>
         
-    
         <label for="withdrawAmount" class="label-style">Withdraw Amount:</label>
-
 
         <input type="number" id="withdrawAmount" class="transaction-input" placeholder="Enter amount" required>
     
@@ -51,6 +55,7 @@
     
       </div>
       <script src="transaction.js"></script>
+      <script src="home.js"></script>
       <footer>
         <p>&copy; 2024 Your Website. All rights reserved.</p>
       </footer>

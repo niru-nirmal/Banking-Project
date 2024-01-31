@@ -17,12 +17,19 @@
     </div>
     <div class="menu-nav">
         <a href="home.html">Home</a>
-        <a href="registration.html">Application Registration</a>
+        <!-- <a href="registration.html">Application Registration</a> -->
+        <div class="dropdown">
+          <button class="dropbtn">Application Registration <i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+              <a href="registration.html">Personal Registration</a>
+              <a href="corporate-reg.html">Corporate Registration</a>
+          </div>
+      </div>
         <div class="dropdown">
             <button class="dropbtn">Banking <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="login.html">Personal Banking</a>
-                <a href="login.html">Corporate Banking</a>
+                <a href="personal-login.html">Personal Banking</a>
+                <a href="corporate-login.html">Corporate Banking</a>
             </div>
         </div>
         <a href="faq.html">FAQ</a>
@@ -32,7 +39,7 @@
   </div>
     <h1>User Data Table</h1> <br>
 
-    <button onclick="getUserData()">Get Users</button>
+    <button id="getUserButton" onclick="getUserData()">Get User List</button>
 
     <table>
       <thead>
@@ -41,6 +48,7 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Account Number</th>
+          <th>Balance</th>
         </tr>
       </thead>
       <tbody id="userDataBody">
@@ -48,6 +56,7 @@
     </table>   
 
     <script src="userList.js"></script>
+    <script src="home.js"></script>
     <footer>
       <p>&copy; 2024 Your Website. All rights reserved.</p>
     </footer>

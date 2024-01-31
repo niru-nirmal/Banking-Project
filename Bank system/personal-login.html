@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Site</title>
+    <link rel="stylesheet" href="personal-login.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo" id="logo">
+        <img width="100" src="SBI-Logo.png" alt="Logo">
+    </div>
+    <div class="menu-nav">
+        <a href="home.html">Home</a>
+        <!-- <a href="registration.html">Application Registration</a> -->
+        <div class="dropdown">
+            <button class="dropbtn">Application Registration <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="registration.html">Personal Registration</a>
+                <a href="corporate-reg.html">Corporate Registration</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Banking <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="personal-login.html">Personal Banking</a>
+                <a href="corporate-login.html">Corporate Banking</a>
+            </div>
+        </div>
+        <a href="faq.html">FAQ</a>
+        <a href="contactus.html">Customer Care</a>
+        <a href="about.html">About Us</a> 
+    </div>
+</div>
+
+
+    <div class="login-container">
+        <h2>Personal Login</h2>
+        <form>
+            <!-- <label for="username">Username:</label> -->
+            <input type="text" id="username" name="username" placeholder="Username" required>
+
+            <!-- <label for="password">Password:</label> -->
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div style="display: flex;padding: 15px; gap: 20px;">
+            <button type="button" onclick="login()">Login</button>
+
+            <button type="button" onclick="forgotPassword()" 
+            class="forgot-password-btn">Forgot Password?</button>
+        </div>
+        </form>
+    </div>
+<script src="personal-login.js"></script>
+<script src="home.js"></script>
+<footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
