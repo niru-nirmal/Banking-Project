@@ -52,6 +52,15 @@
         <input type="number" id="depositAmount" class="transaction-input" placeholder="Enter amount" required>
     
         <button onclick="deposit()">Deposit</button>
+
+        <label for="transferToUsername" class="label-style">Transfer To Username:</label>
+        <select id="transferToUsername" class="transaction-input" required>
+        </select>
+
+        <label for="transferAmount" class="label-style">Transfer Amount:</label>
+        <input type="number" id="transferAmount" class="transaction-input" placeholder="Enter amount" required>
+        <button onclick="transfer()">Transfer</button>
+   
     
       </div>
       <script src="transaction.js"></script>

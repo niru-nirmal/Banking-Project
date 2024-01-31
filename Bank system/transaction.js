@@ -35,6 +35,7 @@ function updateBalance(balance) {
 
 document.addEventListener('DOMContentLoaded', function () {
   getAccountDetails();
+  populateUsernamesDropdown();
 });
 
 function withdraw() {
@@ -86,3 +87,58 @@ document.getElementById('logo').addEventListener('click', function () {
   window.location.href = 'home.html';
 });
 
+function transfer() {
+  var transferAmountInput = document.getElementById('transferAmount');
+  var transferToUsernameInput = document.getElementById('transferToUsername');
+
+  var transferAmount = parseFloat(transferAmountInput.value);
+  var transferToUsername = transferToUsernameInput.value;
+
+  if (isNaN(transferAmount) || transferAmount <= 0) {
+    alert('Invalid transfer amount');
+    return;
+  }
+
+  const loggedInUsername = localStorage.getItem('loggedInUsername');
+  const balanceData = JSON.parse(localStorage.getItem('balanceData')) || {};
+  const currentBalance = balanceData[loggedInUsername] || 0;
+
+  if (transferAmount > currentBalance) {
+    alert('Insufficient Balance');
+    return;
+  }
+
+  const recipientBalance = balanceData[transferToUsername];
+
+  if (recipientBalance === undefined) {
+    alert('Recipient not found');
+    return;
+  }
+
+  const newBalanceSender = currentBalance - transferAmount;
+  const newBalanceRecipient = recipientBalance + transferAmount;
+
+  balanceData[loggedInUsername] = newBalanceSender;
+  balanceData[transferToUsername] = newBalanceRecipient;
+
+  localStorage.setItem('balanceData', JSON.stringify(balanceData));
+
+  transferAmountInput.value = '';
+  transferToUsernameInput.value = '';
+  alert('Transfer successful! New balance: ' + newBalanceSender.toFixed(2));
+}
+
+function populateUsernamesDropdown() {
+  const dropdown = document.getElementById('transferToUsername');
+  const loggedInUsername = localStorage.getItem('loggedInUsername');
+  const balanceData = JSON.parse(localStorage.getItem('balanceData')) || {};
+
+  for (const username in balanceData) {
+    if (username !== loggedInUsername) {
+      const option = document.createElement('option');
+      option.value = username;
+      option.text = username;
+      dropdown.add(option);
+    }
+  }
+}
