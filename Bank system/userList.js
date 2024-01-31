@@ -45,7 +45,7 @@ function getUserData() {
 
 function getBalanceForUser(username) {
   const balanceData = JSON.parse(localStorage.getItem('balanceData')) || {};
-  return balanceData[username] || 1000;
+  return balanceData[username] || 0;
 }
 
 document.getElementById('getUserButton').addEventListener('click', function () {
